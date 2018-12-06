@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 700px;
+  height: 50px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.footer > i {
+  color: #464646;
+  font-size: 40px;
+}
+
+.footer > i:hover {
+   color: white;
+   cursor: pointer;
+}

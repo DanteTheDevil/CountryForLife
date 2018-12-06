@@ -1,0 +1,35 @@
+.countries {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 300px;
+}
+
+.countries > i {
+  font-size: 150px;
+  color: #464646;
+}
+
+.countries > i:hover {
+   color: white;
+   cursor: pointer;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+}
+
+.result > i {
+  font-size: 80px;
+  color: #464646;
+}
+
+.result > i:hover {
+  color: white;
+  cursor: pointer;
+}

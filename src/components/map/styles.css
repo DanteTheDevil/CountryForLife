@@ -1,0 +1,16 @@
+.map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 698px;
+  height: 520px;
+
+}
+
+svg path:hover {
+  fill: grey;
+  cursor: pointer;
+}

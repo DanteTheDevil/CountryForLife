@@ -1,0 +1,26 @@
+.hint {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  background-color: grey;
+  z-index: 1;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+}
+
+.hint img {
+  width: 20%;
+}
+
+.hint span {
+  margin-left: 5px;
+
+}
+
+.hidden {
+  display: none;
+}
