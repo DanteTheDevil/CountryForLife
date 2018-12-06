@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './styles.css';
-import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {connect} from "react-redux";
-import Confirm from '../confirm/confirm.js';
 import * as resultActions from "../../actions/result";
 
 class Question extends React.Component {
@@ -25,8 +24,10 @@ class Question extends React.Component {
       });
     }
   }
-  nextCountry() {
+  nextCountry(event) {
     const {updateData} = this.props.resultActions;
+    const {history, resultStorage} = this.props;
+    const unPassed = resultStorage.filter(item => !item.passed);
 
     updateData({
       countryCode: this.countryCode,
@@ -39,18 +40,26 @@ class Question extends React.Component {
       language: '',
       currency: ''
     });
+    if(unPassed.length - 1 === 0) {
+      history.push('/result');
+    }
     event.preventDefault();
   }
   render () {
     const {resultStorage} = this.props;
     const unPassed = resultStorage.filter(item => !item.passed);
     const keys = ['Name', 'Capital', 'Language', 'Currency'];
-    const list = keys.map((item) => <li key={item}>
-      <label>
-        {item}
-        <input type={'text'} name={item.toLowerCase()} onChange={this.fieldChange(item.toLowerCase())}/>
-      </label>
-    </li>);
+    const list = keys.map((item) => {
+      const formatItem = item.toLowerCase();
+      const data = this.state[formatItem];
+
+      return <li key={item}>
+        <label>
+          {item}
+          <input value={data} type={'text'} name={formatItem} onChange={this.fieldChange(formatItem)}/>
+        </label>
+      </li>
+    });
 
     if(!this.countryCode) {
       const index = Math.trunc(Math.random() * unPassed.length);
@@ -62,26 +71,23 @@ class Question extends React.Component {
         <div className={styles.flag}>
           <img src={require(`../../images/flags/${this.countryCode}.svg`)} />
         </div>
-        <form className={styles.content}>
+        <form className={styles.content} onSubmit={this.nextCountry}>
           <ul>
             {list}
           </ul>
+          <input className={styles.submit} type={'submit'} value={'SUBMIT'}/>
         </form>
-        {unPassed.length > 1 ?
-          <input className={styles.submit} type={'submit'} value={'SUBMIT'} onClick={this.nextCountry}/> :
-          <Link to={'/result'} className={styles.submit} onClick={this.nextCountry}><b>{'SUBMIT'}</b></Link>
-        }
       </div>
     )
   }
 }
 
-export default connect(
+export default withRouter(connect(
   store => store,
   dispatch => ({
     resultActions: {
       updateData: data => dispatch(resultActions.updateData(data))
     }
   })
-)(Question);
+)(Question));
 
