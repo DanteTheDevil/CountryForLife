@@ -10,14 +10,6 @@ import Result from '../result/result.js';
 import Footer from '../footer/footer.js';
 
 class App extends React.Component {
-  componentWillMount() {
-    const {pageStatus, location, history} = this.props;
-    console.log(pageStatus.location, location.pathname);
-    if(pageStatus.location !== location.pathname) {
-
-      history.push(pageStatus.location);
-    }
-  }
   render() {
     return (
       <React.Fragment>
