@@ -14,11 +14,6 @@ Demo is availiable on gitHub pages: [demo].
 * react/redux/react-router
 * offline support with service worker
 
-## How to use ? 
-<div align="center">
-<a href="https://ibb.co/DgyymX7"><img src="https://i.ibb.co/DgyymX7/step1.jpg" alt="step1" border="0"></a> <a href="https://ibb.co/qN67qzL"><img src="https://i.ibb.co/qN67qzL/step2.jpg" alt="step2" border="0"></a> <a href="https://ibb.co/1vMfKQX"><img src="https://i.ibb.co/1vMfKQX/step3.jpg" alt="step3" border="0"></a> <a href="https://ibb.co/2K19FGM"><img src="https://i.ibb.co/2K19FGM/step4.jpg" alt="step4" border="0"></a>
-</div>
-
 ## Mockups
 
 <div align="center">
