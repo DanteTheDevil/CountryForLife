@@ -17,8 +17,8 @@ Demo is availiable on gitHub pages: [demo].
 ## Mockups
 
 <div align="center">
-<a href="https://ibb.co/zfd6s15"><img src="https://i.ibb.co/zfd6s15/map.jpg" alt="map" border="0"></a>&#x2007
 <a href="https://ibb.co/c2y41nq"><img src="https://i.ibb.co/c2y41nq/intro.jpg" alt="intro" border="0"></a>&#x2007
+<a href="https://ibb.co/zfd6s15"><img src="https://i.ibb.co/zfd6s15/map.jpg" alt="map" border="0"></a>&#x2007
 <a href="https://ibb.co/dGy9NpS"><img src="https://i.ibb.co/dGy9NpS/add.jpg" alt="add" border="0"></a>
 <p><a href="https://ibb.co/nccpx20"><img src="https://i.ibb.co/nccpx20/countries.jpg" alt="countries" border="0"></a>&#x2007
 <a href="https://ibb.co/DRj2vbn"><img src="https://i.ibb.co/DRj2vbn/test.jpg" alt="test" border="0"></a>&#x2007
