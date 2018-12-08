@@ -29,7 +29,7 @@ Demo is availiable on gitHub pages: [demo].
 
 * Add completed world map
 * Add posibility to manipulate with map size and position
-* Add more more info and questions to the test
+* Add more info and questions to the test
 
 ## Contribution guide
 
