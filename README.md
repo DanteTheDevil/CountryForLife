@@ -25,6 +25,12 @@ Demo is availiable on gitHub pages: [demo].
 <a href="https://ibb.co/qFY3wb0"><img src="https://i.ibb.co/qFY3wb0/result.jpg" alt="result" border="0"></a>
 </div>
 
+## Planned features
+
+* Add completed world map
+* Add posibility to manipulate with map size and position
+* Add more more info and questions to the test
+
 ## Contribution guide
 
 Contribution is a valuable part of any project, becouse a lot of people have unique ideas and good skills, that may help project to 
