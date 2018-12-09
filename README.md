@@ -27,8 +27,7 @@ Demo is availiable on gitHub pages: [demo].
 
 ## Planned features
 
-* Add completed world map
-* Add posibility to manipulate with map size and position
+* Rework map zoom
 * Add more info and questions to the test
 
 ## Contribution guide
