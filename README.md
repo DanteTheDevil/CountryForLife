@@ -25,11 +25,6 @@ Demo is availiable on gitHub pages: [demo].
 <a href="https://ibb.co/pQzTj61"><img src="https://i.ibb.co/pQzTj61/result.jpg" alt="result" border="0"></a>
 </div>
 
-## Planned features
-
-* Rework map zoom
-* Add more info and questions to the test
-
 ## Contribution guide
 
 Contribution is a valuable part of any project, becouse a lot of people have unique ideas and good skills, that may help project to 
