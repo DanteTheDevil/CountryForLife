@@ -24,7 +24,7 @@ class Intro extends React.Component {
               to find an empty card form and repeat 1 and 2 steps.</li>
           </ol>
         </div>
-        <Confirm type={'/'} text={'UNDERSTOOD'}/>
+        <Confirm type={'/intro'} text={'UNDERSTOOD'}/>
       </div>
     );
   }

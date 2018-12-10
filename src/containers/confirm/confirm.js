@@ -11,8 +11,8 @@ class Confirm extends React.Component {
   constructor (props) {
     super(props);
     this.redirect = {
-      'intro': '/',
-      '/': '/countries',
+      'intro': '/intro',
+      '/intro': '/countries',
       '/countries': '/test',
       '/test': '/result',
       '/result': '/countries'

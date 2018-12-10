@@ -1,5 +1,5 @@
 export const initialState = {
-  location: '/'
+  location: '/intro'
 };
 
 export function page (state = initialState, action) {
