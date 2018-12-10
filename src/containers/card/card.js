@@ -48,7 +48,7 @@ class Card extends React.Component {
         return (
           <div className={styles.hasCountry}>
             <div className={styles.flag}>
-              <img src={require(`../../images/flags/${countryCode}.svg`)} />
+              <img src={`../../images/flags/${countryCode}.svg`} />
             </div>
             <div className={styles.content}>
               <ul>
