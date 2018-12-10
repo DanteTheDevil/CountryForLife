@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 import ProtectedRoute from '../../containers/protectedRoute/protectedRoute.js';
 import Logo from '../logo/logo.js';
 import Map from '../../containers/map/map.js';
@@ -25,7 +25,7 @@ class App extends React.Component {
           } />
           <ProtectedRoute path={'/test'} component={Test} />
           <ProtectedRoute path={'/result'} component={Result} />
-          <Route path={'/*'} component={pageNotFound} />
+          <Redirect to={'/'}/>
         </Switch>
         <Footer />
       </React.Fragment>
