@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -49,12 +48,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve('./src/index.html')
     }),
-    new CopyWebpackPlugin([
-      {
-        from: './src/images',
-        to: './images'
-      },
-    ]),
     new webpack.DefinePlugin({
       'process.env.PUBLIC_URL': `"${''}"`
     })
