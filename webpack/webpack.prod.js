@@ -49,12 +49,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve('./src/index.html')
     }),
-    new CopyWebpackPlugin([
-      {
-        from: './src/images',
-        to: './images'
-      },
-    ]),
     new webpack.DefinePlugin({
       'process.env.PUBLIC_URL': `"${'/CountryForLife'}"`
     })
