@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -49,7 +50,13 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env.PUBLIC_URL': `"${'/CountryForLife'}"`
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: './src/404.html',
+        to: './404.html'
+      },
+    ])
   ],
   devServer: {
     contentBase: path.join(__dirname, '../'),
