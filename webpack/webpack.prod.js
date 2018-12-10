@@ -4,13 +4,14 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: [
     './src/index.js'
   ],
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '../')
+    path: path.resolve(__dirname, '../'),
+    publicPath: '/CountryForLife/'
   },
   devtool: 'cheap-module-eval-source-map',
   module: {
@@ -22,7 +23,7 @@ module.exports = {
           path.resolve(__dirname, '../src')
         ],
         use: {
-            loader: "babel-loader"
+          loader: "babel-loader"
         }
       },
       {
@@ -34,7 +35,6 @@ module.exports = {
       },
       {
         test: /\.(svg|png|jpg|jpeg|gif)$/,
-
         use: {
           loader: 'file-loader',
           options: {
@@ -56,7 +56,7 @@ module.exports = {
       },
     ]),
     new webpack.DefinePlugin({
-      'process.env.PUBLIC_URL': `"${''}"`
+      'process.env.PUBLIC_URL': `"${'/CountryForLife'}"`
     })
   ],
   devServer: {

@@ -3,5 +3,6 @@ coordinates.js
 countries.js
 service-worker.js
 webpack.dev.js
+webpack.prod.js
 **/*.svg
 

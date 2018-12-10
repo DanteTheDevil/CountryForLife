@@ -9,7 +9,7 @@
     "lint": "eslint ./src",
     "lint:watch": "esw --watch",
     "precommit": "npm run lint",
-    "build": "webpack -w --mode production --config ./webpack/webpack.dev.js"
+    "build": "webpack -w --config ./webpack/webpack.prod.js"
   },
   "author": "",
   "license": "ISC",
