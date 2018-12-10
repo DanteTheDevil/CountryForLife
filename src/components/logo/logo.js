@@ -5,9 +5,9 @@ class Logo extends React.Component {
   render () {
     return (
       <div className={styles.logo}>
-        <img src={require('../../images/left_arrows.png')} />
-        <img src={require('../../images/logo.png')} />
-        <img src={require('../../images/right_arrows.png')} />
+        <img src={'../../images/left_arrows.png'} />
+        <img src={'../../images/logo.png'} />
+        <img src={'../../images/right_arrows.png'} />
       </div>
     );
   }
