@@ -15,7 +15,7 @@ class App extends React.Component {
       <React.Fragment>
         <Logo />
         <Switch>
-          <Route exact path={'/'} component={Intro} />
+          <Route exact path={'/intro'} component={Intro} />
           <ProtectedRoute path={'/countries'} component={() =>
             <React.Fragment>
               <Map />
@@ -24,7 +24,7 @@ class App extends React.Component {
           } />
           <ProtectedRoute path={'/test'} component={Test} />
           <ProtectedRoute path={'/result'} component={Result} />
-          <Redirect to={'/'}/>
+          <Redirect to={'/intro'}/>
         </Switch>
         <Footer />
       </React.Fragment>
