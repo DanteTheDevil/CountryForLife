@@ -7,12 +7,15 @@ class Hint extends React.Component {
     const {x, y, text, icon, visibility} = this.props.params;
     const cordX = `${x}px`;
     const cordY = `${y - 50 + pageYOffset}px`;
-    return (
-      <div style={{top: cordY, left: cordX}} className={visibility ? styles.hint : styles.hidden}>
-        <img src={icon} alt={''}/>
-        <div><b>{text}</b></div>
-      </div>
-    );
+
+    if (icon !== 'none') {
+      return (
+        <div style={{top: cordY, left: cordX}} className={visibility ? styles.hint : styles.hidden}>
+          <img src={icon} alt={''}/>
+          <div><b>{text}</b></div>
+        </div>
+      );
+    }
   }
 }
 
