@@ -9,7 +9,7 @@ module.exports = {
   ],
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '../')
+    path: path.resolve(__dirname, '../CountryForLife')
   },
   devtool: 'cheap-module-eval-source-map',
   module: {
