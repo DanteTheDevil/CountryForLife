@@ -1,0 +1,7 @@
+node_modules
+coordinates.js
+countries.js
+service-worker.js
+webpack.dev.js
+**/*.svg
+

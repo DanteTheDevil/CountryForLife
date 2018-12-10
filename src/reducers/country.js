@@ -7,7 +7,7 @@ export const initialState = [
 ];
 
 export function country (state = initialState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case 'COUNTRY_SET_STATUS': {
       const {countryIndex, status} = action.payload;
       const countryStorage = [...state];
@@ -19,8 +19,8 @@ export function country (state = initialState, action) {
       const {countryIndex, status, data} = action.payload;
       const countryStorage = [...state];
 
-      if(countryStorage[countryIndex].status === 'inProcess') {
-        countryStorage[countryIndex+1] = {
+      if (countryStorage[countryIndex].status === 'inProcess') {
+        countryStorage[countryIndex + 1] = {
           status: 'none',
           countryCode: 'none',
           visible: false

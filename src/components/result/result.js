@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './styles.css';
-import Confirm from '../confirm/confirm.js';
-import Answer from '../answer/answer.js';
-import Arrow from '../arrow/arrow.js';
+import Confirm from '../../containers/confirm/confirm.js';
+import Answer from '../../containers/answer/answer.js';
+import Arrow from '../../containers/arrow/arrow.js';
 
 class Result extends React.Component {
   render () {
@@ -18,7 +18,7 @@ class Result extends React.Component {
           <Arrow direction={'right'} type={'result'}/>
         </div>
       </div>
-    )
+    );
   }
 }
 

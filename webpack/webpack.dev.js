@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -14,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js?$/,
+        test: /\.js|jsx$/,
         exclude: [/(node_modules)/, /\.spec\.js$/],
         include: [
           path.resolve(__dirname, '../src')
@@ -32,11 +33,13 @@ module.exports = {
       },
       {
         test: /\.(svg|png|jpg|jpeg|gif)$/,
-        include: [
-              path.resolve(__dirname, '../src/images')
-        ],
+
         use: {
-          loader: 'file-loader'
+          loader: 'file-loader',
+          options: {
+            name: 'images/[path][name].[ext]',
+            context: '../src/images'
+          }
         }
       }
     ]
@@ -44,7 +47,13 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve('./src/index.html')
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: './src/images',
+        to: './images'
+      },
+    ])
   ],
   devServer: {
     contentBase: path.join(__dirname, '../'),

@@ -4,7 +4,7 @@
   align-items: center;
   position: absolute;
   width: 150px;
-  height: 50px;
+  height: 60px;
   background-color: grey;
   z-index: 1;
   border: 1px solid white;
@@ -13,12 +13,13 @@
 }
 
 .hint img {
+  margin-left: 10px;
   width: 20%;
 }
 
-.hint span {
+.hint div {
   margin-left: 5px;
-
+  width: 80%;
 }
 
 .hidden {

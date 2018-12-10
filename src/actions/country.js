@@ -19,19 +19,19 @@ export const getData = (countryName, countryIndex) => {
           capital: capital,
           language: language,
           currency: currency
-        }
+        };
       })
       .then(response => {
         dispatch({
-            type: 'COUNTRY_GET_DATA',
-            payload: {
-              countryIndex: countryIndex,
-              status: 'hasCountry',
-              data: response
-            }
-          });
+          type: 'COUNTRY_GET_DATA',
+          payload: {
+            countryIndex: countryIndex,
+            status: 'hasCountry',
+            data: response
+          }
+        });
       });
-  }
+  };
 };
 
 export const setVisible = (currentIndex, nextIndex) => {
@@ -41,7 +41,7 @@ export const setVisible = (currentIndex, nextIndex) => {
       currentIndex: currentIndex,
       nextIndex: nextIndex
     }
-  }
+  };
 };
 
 export const remove = countryIndex => {
@@ -50,13 +50,13 @@ export const remove = countryIndex => {
     payload: {
       countryIndex: countryIndex
     }
-  }
+  };
 };
 
 export const removeAll = () => {
   return {
     type: 'COUNTRY_DELETE_ALL'
-  }
+  };
 };
 
 export const setStatus = (countryIndex, status) => {
@@ -66,5 +66,5 @@ export const setStatus = (countryIndex, status) => {
       countryIndex: countryIndex,
       status: status
     }
-  }
+  };
 };

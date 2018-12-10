@@ -1,7 +1,7 @@
 export const initialState = [];
 
 export function result (state = initialState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case 'RESULT_GET_DATA': {
       const data = action.payload;
 
@@ -11,7 +11,7 @@ export function result (state = initialState, action) {
           return {
             countryCode: item.countryCode,
             passed: false
-          }
+          };
         });
     }
     case 'RESULT_UPDATE_DATA': {

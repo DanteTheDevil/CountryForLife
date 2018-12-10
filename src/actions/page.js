@@ -4,5 +4,5 @@ export const changeLocation = location => {
     payload: {
       location: location
     }
-  }
+  };
 };

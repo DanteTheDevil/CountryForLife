@@ -1,26 +1,31 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Route, Switch, Redirect, withRouter} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
+import ProtectedRoute from '../../containers/protectedRoute/protectedRoute.js';
 import Logo from '../logo/logo.js';
-import Map from '../map/map.js';
+import Map from '../../containers/map/map.js';
 import Intro from '../intro/intro.js';
-import Countries from '../countries/countries.js';
-import Test from '../test/test.js';
+import Countries from '../../containers/countries/countries.js';
+import Test from '../../containers/test/test.js';
 import Result from '../result/result.js';
 import Footer from '../footer/footer.js';
+import pageNotFound from '../pageNotFound/pageNotFound.js';
 
 class App extends React.Component {
-  render() {
+  render () {
     return (
       <React.Fragment>
         <Logo />
-        <Map />
         <Switch>
           <Route exact path={'/'} component={Intro} />
-          <Route path={'/countries'} component={Countries} />
-          <Route path={'/test'} component={Test} />
-          <Route path={'/result'} component={Result}/>
-          <Redirect from={'/*'} to={'/'} />
+          <ProtectedRoute path={'/countries'} component={() =>
+            <React.Fragment>
+              <Map />
+              <Countries />
+            </React.Fragment>
+          } />
+          <ProtectedRoute path={'/test'} component={Test} />
+          <ProtectedRoute path={'/result'} component={Result} />
+          <Route path={'/*'} component={pageNotFound} />
         </Switch>
         <Footer />
       </React.Fragment>
@@ -28,8 +33,4 @@ class App extends React.Component {
   }
 }
 
-export default withRouter(connect(
-  store => ({
-    pageStatus: store.pageStatus
-  })
-)(App));
+export default App;

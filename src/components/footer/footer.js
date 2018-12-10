@@ -5,9 +5,11 @@ class Footer extends React.Component {
   render () {
     return (
       <div className={styles.footer}>
-        <i className="fab fa-github" />
+        <a href={'https://github.com/DanteTheDevil/CountryForLife'}>
+          <i className="fab fa-github" />
+        </a>
       </div>
-    )
+    );
   }
 }
 

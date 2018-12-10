@@ -1,0 +1,88 @@
+.hasCountry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 290px;
+  height: 410px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0;
+}
+
+.addCountry {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 290px;
+  height: 410px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.addCountry > i {
+  font-size: 80px;
+  color: #464646;
+}
+
+.addCountry > i:hover {
+   color: white;
+   cursor: pointer;
+}
+
+.options {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  height: 10%;
+}
+
+.flag {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 90%;
+   height: 120px;
+   border-bottom: 1px solid white;
+ }
+
+.flag img {
+  width: 80px;
+  border-radius: 5px;
+}
+
+.content {
+  width: 80%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 18px;
+}
+
+.content ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  justify-content: space-around;
+}
+
+.content li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  width: 100%;
+}
+
+.content li div {
+  text-align: right;
+}
+
+
+
