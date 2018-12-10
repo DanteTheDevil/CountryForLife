@@ -9,7 +9,7 @@ class ProtectedRoute extends React.Component {
 
     return path === location ?
       <Route {...this.props}/> :
-      <Redirect to={`${process.env.PUBLIC_URL}${location}`}/>;
+      <Redirect to={location}/>;
   }
 }
 

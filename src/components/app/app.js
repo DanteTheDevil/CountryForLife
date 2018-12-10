@@ -24,7 +24,7 @@ class App extends React.Component {
           } />
           <ProtectedRoute path={'/test'} component={Test} />
           <ProtectedRoute path={'/result'} component={Result} />
-          <Redirect to={`${process.env.PUBLIC_URL}/intro`}/>
+          <Redirect to={'/intro'}/>
         </Switch>
         <Footer />
       </React.Fragment>
