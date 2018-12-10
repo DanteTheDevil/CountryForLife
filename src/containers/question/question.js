@@ -74,7 +74,7 @@ class Question extends React.Component {
     return (
       <div className={styles.question}>
         <div className={styles.flag}>
-          <img src={require(`../../images/flags/${this.countryCode}.svg`)} />
+          <img src={`./src/images/flags/${this.countryCode}.svg`} />
         </div>
         <form className={styles.content} onSubmit={this.nextCountry}>
           <ul>
