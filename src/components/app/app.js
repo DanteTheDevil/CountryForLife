@@ -8,7 +8,6 @@ import Countries from '../../containers/countries/countries.js';
 import Test from '../../containers/test/test.js';
 import Result from '../result/result.js';
 import Footer from '../footer/footer.js';
-import pageNotFound from '../pageNotFound/pageNotFound.js';
 
 class App extends React.Component {
   render () {
