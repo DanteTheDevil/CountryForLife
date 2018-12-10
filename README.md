@@ -6,7 +6,7 @@
 ## Country For Life
 This app give you a possibility to check general info and prove your knowledge about different countries of Europe. Choose countries, which you want and start a test to see how much do you know.
 
-Demo is availiable on gitHub pages: [demo].  
+Demo is availiable on gitHub pages: [demo](https://dantethedevil.github.io/CountryForLife/).  
 
 ## Tech stack & features
 
