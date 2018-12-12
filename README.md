@@ -6,7 +6,7 @@
 ## Country For Life
 This app give you a possibility to check general info and prove your knowledge about different countries of the World. Choose countries, which you want and start a test to see how much do you know.
 
-Demo is availiable on gitHub pages: [demo](https://dantethedevil.github.io/CountryForLife/).  
+Demo is availiable on Firebase hosting: [demo](https://country-for-life.firebaseapp.com/).  
 
 ## Tech stack & features
 
