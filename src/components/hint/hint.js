@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles.scss';
 import PropTypes from 'prop-types';
 
 class Hint extends React.Component {

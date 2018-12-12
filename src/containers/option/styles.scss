@@ -11,11 +11,11 @@
   background-color: rgba(128, 128, 128, 0);
   font-size: 20px;
   color: #464646;
-}
 
-.option:hover {
-   color: white;
-   cursor: pointer;
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
 }
 
 .active {
@@ -31,9 +31,8 @@
   background-color: rgba(128, 128, 128, 0);
   font-size: 20px;
   color: white;
-}
 
-.active:hover {
-   cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
-

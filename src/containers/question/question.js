@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles.scss';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as resultActions from '../../actions/result';
@@ -74,7 +74,7 @@ class Question extends React.Component {
     return (
       <div className={styles.question}>
         <div className={styles.flag}>
-          <img src={`./src/images/flags/${this.countryCode}.svg`} />
+          <img src={`./images/flags/${this.countryCode}.svg`} />
         </div>
         <form className={styles.content} onSubmit={this.nextCountry}>
           <ul>

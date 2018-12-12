@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
@@ -10,7 +9,7 @@ module.exports = {
   ],
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '../')
+    path: path.resolve(__dirname, '../public')
   },
   devtool: 'cheap-module-eval-source-map',
   module: {
@@ -26,10 +25,11 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
+        test: /\.scss|css$/,
         loaders: [
           'style-loader?sourceMap',
-          'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
+          'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+          'sass-loader'
         ]
       },
       {
@@ -49,14 +49,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve('./src/index.html')
     }),
-    new webpack.DefinePlugin({
-      'process.env.PUBLIC_URL': `"${''}"`
-    }),
     new CopyWebpackPlugin([
       {
         from: './src/404.html',
         to: './404.html'
       },
+      {
+        from: './src/images',
+        to: './images'
+      }
     ])
   ],
   devServer: {

@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles.scss';
 import * as countryActions from '../../actions/country';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 class Option extends React.Component {
   replaceCountry = () => {
-    const {countryIndex, countryStorage} = this.props;
-    const {setStatus} = this.props.countryActions;
+    const {countryIndex, countryStorage, countryActions} = this.props;
+    const {setStatus} = countryActions;
     const {status} = countryStorage[countryIndex];
 
     switch (status) {
@@ -16,7 +16,7 @@ class Option extends React.Component {
         break;
       }
       case 'replace': {
-        setStatus(countryIndex, 'replace');
+        setStatus(countryIndex, 'hasCountry');
         break;
       }
     }

@@ -10,24 +10,26 @@
   color: white;
   font-size: 20px;
   text-decoration: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    color: #686868;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  &:visited {
+    color: white;
+  }
+
+  &:visited:hover {
+    color: #686868;
+    background-color: white;
+    cursor: pointer;
+  }
 }
 
-.confirm:focus {
-  outline: 0;
-}
-.confirm:hover {
-  color: #686868;
-  background-color: white;
-  cursor: pointer;
-}
-
-.confirm:visited {
-  color: white;
-}
-
-.confirm:visited:hover {
-  color: #686868;
-  background-color: white;
-  cursor: pointer;
-}
 

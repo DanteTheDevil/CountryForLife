@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles.scss';
 import {Link, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as resultActions from '../../actions/result';

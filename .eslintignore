@@ -1,7 +1,7 @@
 node_modules
 coordinates.js
 countries.js
-service-worker.js
+sw.js
 webpack.dev.js
 webpack.prod.js
 **/*.svg

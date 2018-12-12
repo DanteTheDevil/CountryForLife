@@ -13,6 +13,11 @@
   border: 1px solid white;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.25);
+
+  i:hover {
+    color: white;
+    cursor: pointer;
+  }
 }
 .top {
   display: flex;
@@ -53,7 +58,3 @@
   font-size: 25px;
 }
 
-.panel i:hover {
-  color: white;
-  cursor: pointer;
-}

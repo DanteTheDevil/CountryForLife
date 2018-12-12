@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import styles from './styles.css';
+import styles from './styles.scss';
 import * as countryActions from '../../actions/country';
 import Coordinates from './coordinates.js';
 import Hint from '../../components/hint/hint.js';
@@ -36,7 +36,7 @@ class Map extends React.Component {
     if (id) {
       hint.visibility = true;
       hint.text = newCountry.name;
-      hint.icon = `./src/images/flags/${id}.svg`;
+      hint.icon = `./images/flags/${id}.svg`;
       this.setState({hint: hint});
     }
   };

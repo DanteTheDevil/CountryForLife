@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles.scss';
 import Confirm from '../confirm/confirm.js';
 import Arrow from '../arrow/arrow.js';
 import Card from '../card/card.js';

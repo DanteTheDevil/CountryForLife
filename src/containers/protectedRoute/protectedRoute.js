@@ -9,7 +9,7 @@ class ProtectedRoute extends React.Component {
 
     return path === location ?
       <Route {...this.props}/> :
-      <Redirect to={location}/>;
+      <Redirect to={'/intro'}/>;
   }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles.scss';
 import Option from '../option/option.js';
 import {connect} from 'react-redux';
 import * as countryActions from '../../actions/country';
@@ -48,7 +48,7 @@ class Card extends React.Component {
         return (
           <div className={styles.hasCountry}>
             <div className={styles.flag}>
-              <img src={`./src/images/flags/${countryCode}.svg`} />
+              <img src={`./images/flags/${countryCode}.svg`} />
             </div>
             <div className={styles.content}>
               <ul>
@@ -76,7 +76,8 @@ export default connect(
   store => store,
   dispatch => ({
     countryActions: {
-      setStatus: (countryIndex, status) => dispatch(countryActions.setStatus(countryIndex, status))
+      setStatus: (countryIndex, status) =>
+        dispatch(countryActions.setStatus(countryIndex, status))
     }
   })
 )(Card);

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles.scss';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -33,7 +33,7 @@ class Answer extends React.Component {
     return (
       <div className={styles.answer}>
         <div className={styles.flag}>
-          <img src={`./src/images/flags/${flag}.svg`} />
+          <img src={`./images/flags/${flag}.svg`} />
         </div>
         <div className={styles.content}>
           <ul>

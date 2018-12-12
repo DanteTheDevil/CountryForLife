@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles.scss';
 import Timer from '../timer/timer';
 import Question from '../question/question.js';
 import {connect} from 'react-redux';

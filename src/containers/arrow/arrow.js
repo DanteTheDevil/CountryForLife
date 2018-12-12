@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles.scss';
 import {connect} from 'react-redux';
 import * as countryActions from '../../actions/country.js';
 import PropTypes from 'prop-types';
@@ -59,7 +59,8 @@ export default connect(
     countryActions: {
       setVisible: (currentIndex, nextIndex) =>
         dispatch(countryActions.setVisible(currentIndex, nextIndex)),
-      setStatus: (countryIndex, status) => dispatch(countryActions.setStatus(countryIndex, status))
+      setStatus: (countryIndex, status) =>
+        dispatch(countryActions.setStatus(countryIndex, status))
     }
   })
 )(Arrow);

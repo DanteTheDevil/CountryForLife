@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.css';
+import styles from './styles.scss';
 import Confirm from '../../containers/confirm/confirm.js';
 
 class Intro extends React.Component {

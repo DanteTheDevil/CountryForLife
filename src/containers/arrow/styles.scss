@@ -4,16 +4,16 @@
   align-items: center;
   width: 100px;
   height: 300px;
-}
 
-.countries > i {
-  font-size: 150px;
-  color: #464646;
-}
+  i {
+    font-size: 150px;
+    color: #464646;
 
-.countries > i:hover {
-   color: white;
-   cursor: pointer;
+    &:hover {
+      color: white;
+      cursor: pointer;
+    }
+  }
 }
 
 .result {
@@ -22,14 +22,15 @@
   align-items: center;
   width: 100px;
   height: 100px;
+
+  i {
+    font-size: 80px;
+    color: #464646;
+
+    &:hover {
+      color: white;
+      cursor: pointer;
+    }
+  }
 }
 
-.result > i {
-  font-size: 80px;
-  color: #464646;
-}
-
-.result > i:hover {
-  color: white;
-  cursor: pointer;
-}
