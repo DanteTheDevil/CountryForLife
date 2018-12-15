@@ -28,5 +28,5 @@ Demo is availiable on Firebase hosting: [demo](https://country-for-life.firebase
 ## Contribution guide
 
 Contribution is a valuable part of any project, becouse a lot of people have unique ideas and good skills, that may help project to 
-become much better. So, feel free to contribute - [check our guide](https://github.com/DanteTheDevil/TouchTheSun/blob/master/CONTRIBUTING.md).
+become much better. So, feel free to contribute - [check our guide](https://github.com/DanteTheDevil/CountryForLife/blob/master/CONTRIBUTING.md).
 
