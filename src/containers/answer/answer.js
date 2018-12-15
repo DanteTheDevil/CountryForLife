@@ -52,8 +52,10 @@ Answer.propTypes = {
   resultStorage: PropTypes.array
 };
 
-export default connect(
-  store => store
-)(Answer);
+const mapStateToProps = store => {
+  return store;
+};
+
+export default connect(mapStateToProps)(Answer);
 
 

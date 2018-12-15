@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.scss';
 import Option from '../option/option.js';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import * as countryActions from '../../actions/country';
 import PropTypes from 'prop-types';
 
@@ -15,9 +15,8 @@ class Card extends React.Component {
   };
   render () {
     const {countryStorage} = this.props;
-    const country = countryStorage.find(value => value.visible);
-    const countryIndex = countryStorage.indexOf(country);
-    const {status} = country;
+    const countryIndex = countryStorage.findIndex(item => item.visible);
+    const {status} = countryStorage[countryIndex];
 
     switch (status) {
       case 'none': {
@@ -31,6 +30,13 @@ class Card extends React.Component {
         return (
           <div className={styles.addCountry} >
             <i className="fas fa-times-circle" onClick={this.setStatus(countryIndex, 'none')}/>
+          </div>
+        );
+      }
+      case 'loading': {
+        return (
+          <div className={styles.loadingCountry} >
+            <div className={styles.spinner}/>
           </div>
         );
       }
@@ -72,12 +78,15 @@ Card.propTypes = {
   setStatus: PropTypes.func
 };
 
-export default connect(
-  store => store,
-  dispatch => ({
+const mapStateToProps = store => {
+  return store;
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
     countryActions: {
-      setStatus: (countryIndex, status) =>
-        dispatch(countryActions.setStatus(countryIndex, status))
+      setStatus: (countryIndex, status) => dispatch(countryActions.setStatus(countryIndex, status))
     }
-  })
-)(Card);
+  };
+};
+export default connect(mapStateToProps,mapDispatchToProps)(Card);

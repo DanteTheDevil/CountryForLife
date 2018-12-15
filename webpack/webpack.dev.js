@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -51,14 +52,15 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {
-        from: './src/404.html',
-        to: './404.html'
-      },
-      {
         from: './src/images',
         to: './images'
       }
-    ])
+    ]),
+/*    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+      navigateFallback: './index.html',
+    })*/
   ],
   devServer: {
     contentBase: path.join(__dirname, '../'),

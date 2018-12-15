@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import * as resultActions from '../../actions/result';
 import * as pageActions from '../../actions/page';
 import PropTypes from 'prop-types';
+import Greetings from '../../components/greetings/greetings';
 
 class Question extends React.Component {
   constructor (props) {
@@ -65,14 +66,19 @@ class Question extends React.Component {
         </li>
       );
     });
+    let greetings;
 
     if (!this.countryCode) {
       const index = Math.trunc(Math.random() * unPassed.length);
 
       this.countryCode = unPassed[index].countryCode;
+      greetings = unPassed[index].greetings;
     }
+
+
     return (
       <div className={styles.question}>
+        <Greetings greetings={greetings} />
         <div className={styles.flag}>
           <img src={`./images/flags/${this.countryCode}.svg`} />
         </div>
@@ -94,15 +100,20 @@ Question.propTypes = {
   pageActions: PropTypes.object
 };
 
-export default withRouter(connect(
-  store => store,
-  dispatch => ({
+const mapStateToProps = store => {
+  return store;
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
     resultActions: {
       updateData: data => dispatch(resultActions.updateData(data))
     },
     pageActions: {
       changeLocation: location => dispatch(pageActions.changeLocation(location))
     }
-  })
-)(Question));
+  };
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Question));
 

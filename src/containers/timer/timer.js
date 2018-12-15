@@ -63,16 +63,21 @@ Timer.propTypes = {
   time: PropTypes.number
 };
 
-export default withRouter(connect(
-  store => ({
+const mapStateToProps = store => {
+  return {
     resultStorage: store.resultStorage
-  }),
-  dispatch => ({
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
     resultActions: {
       updateData: data => dispatch(resultActions.updateData(data))
     },
     pageActions: {
       changeLocation: location => dispatch(pageActions.changeLocation(location))
     }
-  })
-)(Timer));
+  };
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Timer));

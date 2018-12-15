@@ -4,7 +4,7 @@ import ProtectedRoute from '../../containers/protectedRoute/protectedRoute.js';
 import Logo from '../logo/logo.js';
 import Map from '../../containers/map/map.js';
 import Intro from '../intro/intro.js';
-import Countries from '../../containers/countries/countries.js';
+import Countries from '../countries/countries.js';
 import Test from '../../containers/test/test.js';
 import Result from '../result/result.js';
 import Footer from '../footer/footer.js';

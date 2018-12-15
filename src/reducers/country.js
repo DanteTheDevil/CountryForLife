@@ -1,3 +1,5 @@
+import * as actionTypes from '../constants/country';
+
 export const initialState = [
   {
     status: 'none',
@@ -8,18 +10,18 @@ export const initialState = [
 
 export function country (state = initialState, action) {
   switch (action.type) {
-    case 'COUNTRY_SET_STATUS': {
+    case actionTypes.COUNTRY_SET_STATUS: {
       const {countryIndex, status} = action.payload;
       const countryStorage = [...state];
 
       countryStorage[countryIndex].status = status;
       return countryStorage;
     }
-    case 'COUNTRY_GET_DATA': {
+    case actionTypes.COUNTRY_GET_DATA: {
       const {countryIndex, status, data} = action.payload;
       const countryStorage = [...state];
 
-      if (countryStorage[countryIndex].status === 'inProcess') {
+      if (countryStorage[countryIndex].status === 'loading') {
         countryStorage[countryIndex + 1] = {
           status: 'none',
           countryCode: 'none',
@@ -33,7 +35,7 @@ export function country (state = initialState, action) {
       };
       return countryStorage;
     }
-    case 'COUNTRY_SET_VISIBLE': {
+    case actionTypes.COUNTRY_SET_VISIBLE: {
       const {currentIndex, nextIndex} = action.payload;
       const countryStorage = [...state];
 
@@ -41,7 +43,7 @@ export function country (state = initialState, action) {
       countryStorage[nextIndex].visible = true;
       return countryStorage;
     }
-    case 'COUNTRY_DELETE': {
+    case actionTypes.COUNTRY_DELETE: {
       const countryStorage = [...state];
       const {countryIndex} = action.payload;
 
@@ -49,7 +51,7 @@ export function country (state = initialState, action) {
       countryStorage[countryIndex].visible = true;
       return countryStorage;
     }
-    case 'COUNTRY_DELETE_ALL': {
+    case actionTypes.COUNTRY_DELETE_ALL: {
       return [{
         status: 'none',
         countryCode: 'none',

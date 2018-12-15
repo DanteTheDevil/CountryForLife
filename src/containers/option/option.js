@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.scss';
 import * as countryActions from '../../actions/country';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 class Option extends React.Component {
@@ -55,9 +55,12 @@ Option.propTypes = {
   type: PropTypes.string
 };
 
-export default connect(
-  store => store,
-  dispatch => ({
+const mapStateToProps = store => {
+  return store;
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
     countryActions: {
       getData: (countryName, countryIndex) =>
         dispatch(countryActions.getData(countryName, countryIndex)),
@@ -66,5 +69,7 @@ export default connect(
       setStatus: (countryIndex, status) =>
         dispatch(countryActions.setStatus(countryIndex, status))
     }
-  })
-)(Option);
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Option);

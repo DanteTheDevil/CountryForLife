@@ -53,14 +53,19 @@ Arrow.propTypes = {
   countryActions: PropTypes.object
 };
 
-export default connect(
-  store => store,
-  dispatch => ({
+const mapStateToProps = store => {
+  return store;
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
     countryActions: {
       setVisible: (currentIndex, nextIndex) =>
         dispatch(countryActions.setVisible(currentIndex, nextIndex)),
       setStatus: (countryIndex, status) =>
         dispatch(countryActions.setStatus(countryIndex, status))
     }
-  })
-)(Arrow);
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Arrow);

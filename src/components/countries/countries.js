@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from './styles.scss';
-import Confirm from '../confirm/confirm.js';
-import Arrow from '../arrow/arrow.js';
-import Card from '../card/card.js';
-import {connect} from 'react-redux';
+import Confirm from '../../containers/confirm/confirm.js';
+import Arrow from '../../containers/arrow/arrow.js';
+import Card from '../../containers/card/card.js';
 
 class Countries extends React.Component {
   render () {
@@ -23,8 +22,4 @@ class Countries extends React.Component {
   }
 }
 
-export default connect(
-  store => ({
-    pageStatus: store.pageStatus
-  })
-)(Countries);
+export default Countries;

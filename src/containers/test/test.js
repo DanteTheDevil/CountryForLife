@@ -25,9 +25,10 @@ Test.propTypes = {
   countryStorage: PropTypes.array
 };
 
-
-export default connect(
-  store => ({
+const mapStateToProps = store => {
+  return {
     countryStorage: store.countryStorage
-  })
-)(Test);
+  };
+};
+
+export default connect(mapStateToProps)(Test);

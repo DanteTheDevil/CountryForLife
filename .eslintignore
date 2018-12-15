@@ -5,4 +5,6 @@ sw.js
 webpack.dev.js
 webpack.prod.js
 **/*.svg
+sw.js
+404.html
 

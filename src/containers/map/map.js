@@ -81,9 +81,10 @@ class Map extends React.Component {
     const sameCountry = countryStorage.find(value => value.countryCode.toLowerCase() === id);
 
     if (!sameCountry && country && id) {
-      const {getData} = this.props.countryActions;
+      const {getData, setStatus} = this.props.countryActions;
       const countryIndex = countryStorage.indexOf(country);
 
+      setStatus(countryIndex, 'loading');
       getData(id, countryIndex);
     }
     return false;
@@ -153,12 +154,19 @@ Map.propTypes = {
   getData: PropTypes.func
 };
 
-export default connect(
-  store => store,
-  dispatch => ({
+const mapStateToProps = store => {
+  return store;
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
     countryActions: {
       getData: (countryName, countryIndex) =>
-        dispatch(countryActions.getData(countryName, countryIndex))
+        dispatch(countryActions.getData(countryName, countryIndex)),
+      setStatus: (countryIndex, status) =>
+        dispatch(countryActions.setStatus(countryIndex, status))
     }
-  })
-)(Map);
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Map);

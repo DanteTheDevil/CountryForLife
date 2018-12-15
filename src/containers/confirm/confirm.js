@@ -65,9 +65,12 @@ Confirm.propTypes = {
   text: PropTypes.string
 };
 
-export default withRouter(connect(
-  store => store,
-  dispatch => ({
+const mapStateToProps = store => {
+  return store;
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
     resultActions: {
       getData: countries =>
         dispatch(resultActions.getData(countries)),
@@ -84,6 +87,8 @@ export default withRouter(connect(
       changeLocation: location =>
         dispatch(pageActions.changeLocation(location))
     }
-  })
-)(Confirm));
+  };
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Confirm));
 

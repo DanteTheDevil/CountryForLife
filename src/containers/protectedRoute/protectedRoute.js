@@ -13,8 +13,10 @@ class ProtectedRoute extends React.Component {
   }
 }
 
-export default connect(
-  store => ({
+const mapStateToProps = store => {
+  return {
     pageStatus: store.pageStatus
-  })
-)(ProtectedRoute);
+  };
+};
+
+export default connect(mapStateToProps)(ProtectedRoute);

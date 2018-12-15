@@ -1,20 +1,22 @@
+import * as actionTypes from '../constants/result';
+
 export const initialState = [];
 
 export function result (state = initialState, action) {
   switch (action.type) {
-    case 'RESULT_GET_DATA': {
+    case actionTypes.RESULT_GET_DATA: {
       const data = action.payload;
-
       return data
         .filter(item => item.status === 'hasCountry')
         .map(item => {
           return {
             countryCode: item.countryCode,
+            greetings: item.greetings,
             passed: false
           };
         });
     }
-    case 'RESULT_UPDATE_DATA': {
+    case actionTypes.RESULT_UPDATE_DATA: {
       const resultStorage = state;
       const {countryCode} = action.payload;
       const countryIndex = resultStorage.findIndex(item => item.countryCode === countryCode);
@@ -26,7 +28,7 @@ export function result (state = initialState, action) {
 
       return resultStorage;
     }
-    case 'RESULT_DELETE_ALL': {
+    case actionTypes.RESULT_DELETE_ALL: {
       return [];
     }
     default: {
