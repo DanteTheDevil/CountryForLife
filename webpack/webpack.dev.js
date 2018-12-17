@@ -66,7 +66,11 @@ module.exports = {
       {
         from: './src/service-worker.js',
         to: './service-worker.js'
-      }
+      },
+      {
+        from: './src/favicon.ico',
+        to: './favicon.ico'
+      },
     ])
   ],
   devServer: {
