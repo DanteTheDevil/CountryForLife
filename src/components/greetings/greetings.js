@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 class Greetings extends React.Component {
   render () {
     const {greetings} = this.props;
-    const formatGreetings = `${greetings[0].toUpperCase()}${greetings.slice(1)}!`;
+    const greetingsText = getTextFromHTML(greetings);
+    const formatGreetings = `${greetingsText[0].toUpperCase()}${greetingsText.slice(1)}!`;
 
     return (
       <div className={styles.greetings}>
@@ -21,3 +22,9 @@ Greetings.propTypes = {
 
 export default Greetings;
 
+function getTextFromHTML (text) {
+  const span = document.createElement('span');
+
+  span.innerHTML = text;
+  return span.textContent || span.innerText;
+}

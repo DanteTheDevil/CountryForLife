@@ -14,9 +14,17 @@
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.25);
 
-  i:hover {
-    color: white;
-    cursor: pointer;
+  i {
+    font-size: 30px;
+
+    &:hover {
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+  .zoomOptions {
+    font-size: 25px;
   }
 }
 .top {
@@ -50,11 +58,5 @@
   flex-direction: column;
 }
 
-.arrow {
-  font-size: 30px;
-}
 
-.zoomOptions {
-  font-size: 25px;
-}
 

@@ -4,10 +4,7 @@ export const getData = (countryName, countryIndex) => {
   return dispatch => {
     const dataApi = 'https://restcountries.eu/rest/v2/alpha/';
     const dataUrl = `${dataApi}${countryName}`;
-    const greetingsKey = 'trnsl.1.1.20181214T014542Z.3992549ce869d36f.' +
-      '0028a82b85ca21e60c000c3e4c95e614c51aac44';
-    const greetingsText = 'hello';
-    const greetingsApi = 'https://translate.yandex.net/api/v1.5/tr.json/translate?';
+    const greetingsApi = 'https://fourtonfish.com/hellosalut/';
     const data = {};
 
     request(dataUrl)
@@ -20,8 +17,7 @@ export const getData = (countryName, countryIndex) => {
         const code = alpha2Code.toLowerCase();
         const language = languages[0].name;
         const currency = currencies[0].name;
-
-        return {
+        const countryData = {
           countryCode: code,
           name: formatName,
           capital: capital,
@@ -29,17 +25,20 @@ export const getData = (countryName, countryIndex) => {
           langCode: langCode,
           currency: currency,
         };
+
+        Object.assign(data, countryData);
+        return {
+          langCode: langCode,
+        };
       })
       .then(response => {
-        const greetingsUrl = `${greetingsApi}key=${greetingsKey}&text=${greetingsText}
-        &lang=en-${response.langCode}&format=plain&options=1`;
+        const {langCode} = response;
+        const greetingsUrl = `${greetingsApi}?lang=${langCode}`;
 
-        Object.assign(data, response);
         return request(greetingsUrl);
       })
       .then(response => {
-        data.greetings = response.text[0];
-
+        data.greetings = response.hello;
         dispatch({
           type: actionTypes.COUNTRY_GET_DATA,
           payload: {
@@ -52,20 +51,13 @@ export const getData = (countryName, countryIndex) => {
       .catch(error => {
         const errorCode = parseInt(error.message, 10);
 
-        switch (errorCode) {
-          case 400: {
-            data.greetings = greetingsText;
-            dispatch({
-              type: actionTypes.COUNTRY_GET_DATA,
-              payload: {
-                countryIndex: countryIndex,
-                status: 'hasCountry',
-                data: data
-              }
-            });
-            break;
+        dispatch({
+          type: actionTypes.COUNTRY_SET_STATUS,
+          payload: {
+            countryIndex: countryIndex,
+            status: 'none'
           }
-        }
+        });
       });
   };
 };
@@ -108,9 +100,16 @@ export const setStatus = (countryIndex, status) => {
 function request (url) {
   return fetch(url)
     .then(response => {
-      if (response.status === 200) {
-        return Promise.resolve(response.json());
+      switch (response.status) {
+        case 200: {
+          return Promise.resolve(response.json());
+        }
+        case 204: {
+          throw new Error('No data');
+        }
+        default: {
+          throw new Error(response.status);
+        }
       }
-      return Promise.reject(new Error(response.status));
     });
 }

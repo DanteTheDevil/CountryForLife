@@ -11,6 +11,7 @@ class Question extends React.Component {
   constructor (props) {
     super(props);
     this.countryCode = '';
+    this.greetings = '';
     this.state = {
       name: '',
       capital: '',
@@ -66,19 +67,17 @@ class Question extends React.Component {
         </li>
       );
     });
-    let greetings;
 
     if (!this.countryCode) {
       const index = Math.trunc(Math.random() * unPassed.length);
 
       this.countryCode = unPassed[index].countryCode;
-      greetings = unPassed[index].greetings;
+      this.greetings = unPassed[index].greetings;
     }
-
 
     return (
       <div className={styles.question}>
-        <Greetings greetings={greetings} />
+        <Greetings greetings={this.greetings} />
         <div className={styles.flag}>
           <img src={`./images/flags/${this.countryCode}.svg`} />
         </div>

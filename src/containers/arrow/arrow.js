@@ -20,6 +20,9 @@ class Arrow extends React.Component {
         setStatus(currentIndex, 'hasCountry');
         break;
       }
+      case 'loading': {
+        return;
+      }
     }
     if (direction === 'left') {
       if (countryStorage[currentIndex - 1]) {

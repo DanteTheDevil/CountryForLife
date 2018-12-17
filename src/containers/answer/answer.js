@@ -21,7 +21,9 @@ class Answer extends React.Component {
           <span><b>{item}:</b></span><div>{countryValues[i]}</div>
         </li>) :
       keys.map((item, i) => {
-        const correctIcon = resultValues[i] === countryValues[i] ?
+        const formatResult = resultValues[i].toLowerCase();
+        const formatOrigin = countryValues[i].toLowerCase();
+        const correctIcon = formatResult === formatOrigin ?
           <i className="fas fa-check" style={{color: '#00e700'}}/> :
           <i className="fas fa-times" style={{color: '#e60000'}}/>;
 

@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -35,7 +34,6 @@ module.exports = {
       },
       {
         test: /\.(svg|png|jpg|jpeg|gif)$/,
-
         use: {
           loader: 'file-loader',
           options: {
@@ -43,6 +41,16 @@ module.exports = {
             context: '../src/images'
           }
         }
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }]
       }
     ]
   },
@@ -54,16 +62,15 @@ module.exports = {
       {
         from: './src/images',
         to: './images'
+      },
+      {
+        from: './src/service-worker.js',
+        to: './service-worker.js'
       }
-    ]),
-/*    new WorkboxPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
-      navigateFallback: './index.html',
-    })*/
+    ])
   ],
   devServer: {
-    contentBase: path.join(__dirname, '../'),
+    contentBase: path.join(__dirname, '../public'),
     compress: true,
     historyApiFallback: true,
   }

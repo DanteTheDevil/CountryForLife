@@ -6,7 +6,7 @@ class Footer extends React.Component {
     return (
       <div className={styles.footer}>
         <a href={'https://github.com/DanteTheDevil/CountryForLife'}>
-          <i className="fab fa-github" />
+          <i className={`fab fa-github ${styles.icon}`} />
         </a>
       </div>
     );
