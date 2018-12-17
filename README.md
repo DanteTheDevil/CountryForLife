@@ -21,7 +21,7 @@ Demo is availiable on Firebase hosting: [demo](https://country-for-life.firebase
 <a href="https://ibb.co/dGy9NpS"><img src="https://i.ibb.co/dGy9NpS/add.jpg" alt="add" border="0"></a>
 <a href="https://ibb.co/gv023yr"><img src="https://i.ibb.co/gv023yr/map.jpg" alt="map" border="0"></a>
 <p><a href="https://ibb.co/nccpx20"><img src="https://i.ibb.co/nccpx20/countries.jpg" alt="countries" border="0"></a>
-<a href="https://ibb.co/C24y0KQ"><img src="https://i.ibb.co/C24y0KQ/test.jpg" alt="test" border="0"></a>
+<a href="https://ibb.co/NTwq8RF"><img src="https://i.ibb.co/NTwq8RF/test.jpg" alt="test" border="0"></a>
 <a href="https://ibb.co/pQzTj61"><img src="https://i.ibb.co/pQzTj61/result.jpg" alt="result" border="0"></a>
 </div>
 
