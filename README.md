@@ -13,7 +13,7 @@ Demo is availiable on Firebase hosting: [demo](https://country-for-life.firebase
 * html/css
 * react/redux/react-router
 * offline support with service worker
-
+ss
 ## Mockups
 
 <div align="center">
