@@ -21,7 +21,7 @@ class Confirm extends React.Component {
   onClick = () => {
     const {type, countryStorage, resultActions, countryActions, pageActions, history} = this.props;
     const {getData, removeAll: resultRemoveAll} = resultActions;
-    const {setVisible, removeAll: countryRemoveAll} = countryActions;
+    const {setVisible, setStatus, removeAll: countryRemoveAll} = countryActions;
     const {changeLocation} = pageActions;
     const countryIndex = countryStorage.findIndex(item => item.visible);
 
@@ -34,6 +34,7 @@ class Confirm extends React.Component {
           break;
         }
         setVisible(countryIndex, 0);
+        setStatus(countryIndex, 'hasCountry');
         getData(countryStorage);
         break;
       }
@@ -81,7 +82,9 @@ const mapDispatchToProps = dispatch => {
       setVisible: (currentIndex, nextIndex) =>
         dispatch(countryActions.setVisible(currentIndex, nextIndex)),
       removeAll: () =>
-        dispatch(countryActions.removeAll())
+        dispatch(countryActions.removeAll()),
+      setStatus: (countryIndex, status) =>
+        dispatch(countryActions.setStatus(countryIndex, status))
     },
     pageActions: {
       changeLocation: location =>
