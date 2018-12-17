@@ -6,6 +6,7 @@ export function result (state = initialState, action) {
   switch (action.type) {
     case actionTypes.RESULT_GET_DATA: {
       const data = action.payload;
+
       return data
         .filter(item => item.status === 'hasCountry')
         .map(item => {

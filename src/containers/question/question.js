@@ -56,7 +56,6 @@ class Question extends React.Component {
     const list = keys.map(item => {
       const formatItem = item.toLowerCase();
       const data = this.state[formatItem];
-
       return (
         <li key={item}>
           <label>
@@ -70,7 +69,6 @@ class Question extends React.Component {
 
     if (!this.countryCode) {
       const index = Math.trunc(Math.random() * unPassed.length);
-
       this.countryCode = unPassed[index].countryCode;
       this.greetings = unPassed[index].greetings;
     }

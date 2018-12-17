@@ -33,8 +33,10 @@ class Confirm extends React.Component {
           history.push(type);
           break;
         }
+        if (countryStorage[countryIndex].status === 'replace'){
+          setStatus(countryIndex, 'hasCountry');
+        }
         setVisible(countryIndex, 0);
-        setStatus(countryIndex, 'hasCountry');
         getData(countryStorage);
         break;
       }
