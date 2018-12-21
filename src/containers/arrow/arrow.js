@@ -12,7 +12,7 @@ class Arrow extends React.Component {
     const {status} = countryStorage[currentIndex];
 
     switch (status) {
-      case 'inProcess': {
+      case 'add': {
         setStatus(currentIndex, 'none');
         break;
       }

@@ -21,7 +21,7 @@ export function country (state = initialState, action) {
       const {countryIndex, status, data} = action.payload;
       const countryStorage = [...state];
 
-      if (countryStorage[countryIndex].status === 'loading') {
+      if (countryStorage[countryIndex].status === 'loading_add') {
         countryStorage[countryIndex + 1] = {
           status: 'none',
           countryCode: 'none',

@@ -75,7 +75,7 @@ class Map extends React.Component {
     const country = countryStorage.find(value => {
       const {status} = value;
 
-      return status === 'inProcess' || status === 'replace';
+      return status === 'add' || status === 'replace';
     });
     const {id} = event.target;
     const sameCountry = countryStorage.find(value => value.countryCode.toLowerCase() === id);
@@ -83,9 +83,12 @@ class Map extends React.Component {
     if (!sameCountry && country && id) {
       const {getData, setStatus} = this.props.countryActions;
       const countryIndex = countryStorage.indexOf(country);
+      const status = countryStorage[countryIndex].status === 'add' ?
+        'loading_add' :
+        'loading_replace';
 
-      setStatus(countryIndex, 'loading');
-      getData(id, countryIndex);
+      setStatus(countryIndex, status);
+      getData(id, countryIndex, status);
     }
     return false;
   };
@@ -161,8 +164,8 @@ const mapStateToProps = store => {
 const mapDispatchToProps = dispatch => {
   return {
     countryActions: {
-      getData: (countryName, countryIndex) =>
-        dispatch(countryActions.getData(countryName, countryIndex)),
+      getData: (countryName, countryIndex, cardStatus) =>
+        dispatch(countryActions.getData(countryName, countryIndex, cardStatus)),
       setStatus: (countryIndex, status) =>
         dispatch(countryActions.setStatus(countryIndex, status))
     }

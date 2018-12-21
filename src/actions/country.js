@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/country';
 
-export const getData = (countryName, countryIndex) => {
+export const getData = (countryName, countryIndex, cardStatus) => {
   return dispatch => {
     const dataApi = 'https://restcountries.eu/rest/v2/alpha/';
     const dataUrl = `${dataApi}${countryName}`;
@@ -50,12 +50,15 @@ export const getData = (countryName, countryIndex) => {
       })
       .catch(error => {
         const errorCode = parseInt(error.message, 10);
+        const status = cardStatus === 'loading_add' ?
+          'none' :
+          'hasCountry';
 
         dispatch({
           type: actionTypes.COUNTRY_SET_STATUS,
           payload: {
             countryIndex: countryIndex,
-            status: 'none'
+            status: status
           }
         });
       });

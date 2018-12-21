@@ -22,18 +22,19 @@ class Card extends React.Component {
       case 'none': {
         return (
           <div className={styles.addCountry} >
-            <i className="fas fa-plus-circle" onClick={this.setStatus(countryIndex, 'inProcess')}/>
+            <i className="fas fa-plus-circle" onClick={this.setStatus(countryIndex, 'add')}/>
           </div>
         );
       }
-      case 'inProcess': {
+      case 'add': {
         return (
           <div className={styles.addCountry} >
             <i className="fas fa-times-circle" onClick={this.setStatus(countryIndex, 'none')}/>
           </div>
         );
       }
-      case 'loading': {
+      case 'loading_add':
+      case 'loading_replace': {
         return (
           <div className={styles.loadingCountry} >
             <div className={styles.spinner}/>
