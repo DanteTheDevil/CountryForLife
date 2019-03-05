@@ -1,8 +1,3 @@
-# ELEKS Front-Camp 2018
-
-* Course curator - [Volodymyr Shevchuk](https://github.com/dosandk)
-* Front-camp [facebook](https://www.facebook.com/groups/270300106928894)
-
 ## Country For Life
 This app give you a possibility to check general info and prove your knowledge about different countries of the World. Choose countries, which you want and start a test to see how much do you know.
 
